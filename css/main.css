@@ -1,0 +1,354 @@
+/* General */
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+	background-color: #4fb9ce;
+}
+
+a {
+	color: #103b49;
+}
+
+a:hover {
+	color: #f8a132;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header____________________________________________________ */
+
+header{
+    width: 100%;
+    background-color: #f9ba32;
+}
+
+.header-container{
+	display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.uno{
+	width: 50%;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.uno a{
+	text-align: left;
+	margin: 5px;
+	padding: 5px;
+	color: #103b49;
+}
+
+.due{
+	width: 50%;
+	padding-right: 10px;
+}
+
+.due ul{
+
+    list-style-type: none;
+    float: right;
+    padding: 16px 0;
+    margin: 0;
+    display: inline-block;
+	text-align: right;
+}
+
+.due ul li{
+	padding: 5px;
+	margin: 5px;
+	display: inline-block;
+}
+
+.due ul li a{
+	text-decoration: none;
+	color: #103b49;
+}
+
+/* Signup form____________________________________________________ */
+
+.container-signup{
+	display: block;
+	margin: 0 auto;
+    max-width: 360px;
+    width: 95%;
+    background-color: #1aa1b6;
+    color: #fff;
+    text-align: center;
+    margin-top: 50px;
+    border: 5px solid #f9ba32;
+    border-radius: 10px;
+}
+
+table{
+	width: 100%;
+	padding: 0 20px;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    height: 35px;
+    border: 0;
+}
+
+input[type=text]:hover, input[type=password]:hover {
+	border: 1px solid #103b49;
+}
+
+input[type=submit] {
+  	font-size: 15px;
+  	text-transform: uppercase;
+	margin: 30px auto;
+	background-color: #f9ba32;
+	color: #103b49;
+	border: 1px solid #103b49;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+form{
+	border-top: 5px solid #f9ba32;
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 20px;
+}
+
+.error {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error-table{
+	padding-top: 20px;
+}
+
+
+.container-blog{
+	display: block;
+	margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+	padding: 30px 10px;
+	color: #fff;
+}
+
+.post-label input[type=text]{
+	margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  font-size: 14px;
+  font-family: monospace;
+  padding: 10px;
+}
+
+textarea:hover {
+	border: 1px solid #103b49;
+}
+
+.tag-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.tag-foto{
+	padding: 5px;
+}
+
+.tag-text{
+	margin-left: 10px;
+}
+
+.tag-container img{
+	width: 40px;
+}
+
+/* Likes____________________________________________________ */
+
+.changes{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	text-align: center;
+}
+
+.changes li{
+	width: 20%;
+	margin: 20px 0;
+	list-style-type: none;
+	line-height: 20px;
+}
+
+.changes li:hover {
+	cursor: pointer;
+}
+
+.changes .fa{
+	color: #103b49;
+	margin-right: 5px;
+}
+
+.changes .fa:hover{
+	color: #f9ba32;
+}
+
+.error-by-changes{
+	padding: 20px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+/* Comments display____________________________________________________ */
+
+.commenti{
+	padding: 20px;
+	margin: 5px;
+	display: block;
+	background-color: #103b49;
+}
+
+.commenti h2{
+	padding-bottom: 10px;
+}
+
+.commento-singolo {
+	border-bottom: 1px solid #fff;
+}
+
+.dettagli{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+.edit-post{
+	width: 100%;
+	text-align: right;
+}
+
+.edit-post a{
+	color: #fff;
+}
+
+.empty{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+/* post prewiew____________________________________________________ */
+
+.post-preview{
+	margin: 20px 0;
+	border-bottom: 2px solid #103b49;
+	padding-bottom: 20px;
+}
+
+.post-preview h2{
+	color: #fff;
+	text-transform: uppercase;
+}
+
+.post-preview a{
+	text-decoration: none;
+}
+
+.tag_author{
+	text-transform: capitalize;
+}
+
+/* bo____________________________________________________ */
+
+.main-title {
+    display: block;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.post + .post {
+    margin-top: 15px;
+}
+
+.post{
+	min-height: 100px;
+}
+
+.post-heading {
+    position: relative;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #fff;
+
+}
+
+.post-content {
+	padding-top: 5px;
+    margin-top: 5px;
+    color: #103b49;
+	border-top: 2px solid #f9ba32;
+}
+
+.preferences{
+	margin: 10px 0 0 0;
+	padding: 0;
+}
+
+.preferences li{
+	margin: 20px 0;
+	list-style-type: none;
+	line-height: 20px;
+}
+
+.preferences li img{
+	width: 50px;
+	margin-right: 20px;
+	background-color: #f9ba32;
+	border: 1px solid #f9ba32;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+label{
+	width: 100%;
+}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% for blog in blogs %}
+    <div class="post-preview">
+        <div class="tag-container">
+			<div class="tag-foto">
+				<img src="/img/tag.png">
+			</div>
+			<div>
+				<div class="tag-text">
+				<div class="tag_author">{{blog.user.name}}</div>
+				{{blog.created.strftime("%d %b, %Y")}}
+				</div>
+			</div>
+		</div>
+		<a href='/post/{{blog.key().id()}}'>
+            <h2>{{blog.subject}}</h2>
+        </a>
+        <p class="content">{{blog.content | safe}}</p>
+    </div>
+{% endfor %}
+{% endblock %}

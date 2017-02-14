@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="/css/main.css" />
+    <script src="https://use.fontawesome.com/66953f6c18.js"></script>
+    <title>Blog</title>
+</head>
+
+<body>
+		<header>
+			<div class="header-container">
+			  <div class="uno"><a href="/" class="main-title"><h2>Irene's Blog</h2></a></div>
+	          <div class="due">
+		          <ul>{% if not user %}
+			          <li><a href="/signup">Signup</a></li>
+			          <li><a href="/login">Login</a></li>
+			          {% elif user %}
+			          <li><a href="/newpost">Write a story</a></li>
+			          <li><a href="/logout">Logout</a></li>
+			          {% endif %}
+	          	  </ul>
+	          </div>
+	        </div>
+		</header>
+		  <div class="container-blog">
+		  	<div id="content">
+				  {% block content %}
+				  {% endblock %}
+		    </div>
+		  </div>
+</body>
+
+</html>
+

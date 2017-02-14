@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-blog">
+	    <div id="content">
+			<div class="tag-container">
+				<div class="tag-foto">
+					<img src="/img/tag.png">
+				</div>
+				<div>
+				    <div class="tag-text">
+					    <div class="tag_author">{{post.user.name}}</div>
+						{{post.created.strftime("%d %b, %Y")}}
+				    </div>
+			    </div>
+			</div>
+			    <h2>{{post.subject}}</h2>
+			    <p>{{post.content | safe}}</p>
+				<aside>
+				    <ul class="changes">
+				        {% if user %}
+				        <li>
+				            <a href="/editpost/{{post.key().id()}}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+				        </li>
+				        <li>
+				            <a href="/deletepost/{{post.key().id()}}"><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></a>
+				        </li>
+				        <li>
+				            <a href="/post/{{post.key().id()}}/like"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i> {{like_count}}</a>
+				        </li>
+				        <li>
+				            <a href="/post/{{post.key().id()}}/unlike"><i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true"></i></a>
+				        </li>
+				        {% endif %}
+				    </ul>
+				    <p class="error-by-changes">{{error}}</p>
+				</aside>
+			<div class="commenti">
+				{% if comments_count == 1 %}
+				    <h2>{{comments_count}} comment</h2>
+				{% else %}
+				    <p class="empty">{{comments_count}} comments</p>
+				{% endif %}
+				{% for comment in post_comments %}
+				<div class="commento-singolo">
+					<div>
+					    <p><i class="fa fa-pencil fa-2x"></i> {{comment.user.name}} on {{comment.created.strftime("%b %d, %Y")}}</p>
+					</div>
+				<p>{{comment.text}}</p>
+				</div>
+				<div class="edit-post">
+				    {% if comment.user.name == user.name %}
+					<a href="/blog/{{post.key().id()}}/editcomment/{{comment.key().id()}}">edit</a> |
+				    <a href="/blog/{{post.key().id()}}/deletecomment/{{comment.key().id()}}">delete</a>
+				    {% endif %}
+				</div>
+				{% endfor %}
+			</div>
+			<br><br>
+			    {% if user %}
+			    <div>
+							<form action="/blog/{{post.key().id()}}/addcomment" method="post">
+				        <label>
+				            Add Comment<br>
+				            <textarea name="comment_text">{{comment_text | safe}}</textarea>
+				        </label>
+				        <br>
+				        <div class="alert-danger">{{comment_error}}</div>
+				        <input type="submit" value="Add Comment"/>
+							</form>
+			    </div>
+				{% endif %}
+	    </div>
+</div>
+{% endblock %}
